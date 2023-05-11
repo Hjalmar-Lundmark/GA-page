@@ -88,6 +88,10 @@ select {
   --font-sans: "Open Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .brand {
   color: var(--color-secondary);
 }
@@ -142,7 +146,6 @@ footer a {
     display: none;
   }
 }
-/* https://jensnti.github.io/wu-exempel/navigation/ */
 .nav {
   list-style: none;
   display: flex;
@@ -268,12 +271,13 @@ body {
 .hero {
   font-size: 1.777rem;
   background-color: var(--color-dark);
-  background-image: url(../public/images/WEBB.png);
+  background-image: url(/images/WEBB.png);
+  background-size: cover;
   color: var(--color-light);
   min-height: 80vh;
   display: grid;
   place-content: center;
-  margin-bottom: 3.157rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 36rem) {
