@@ -1,0 +1,319 @@
+@charset "UTF-8";
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --color-light: #F9F5FF;
+  --color-dark: #28262C;
+  --color-shadow: hsla(0, 0%, 13%, 0.2);
+  --color-primary: #BB9EFA;
+  --color-secondary: #14248a;
+  /*--color-light: hsl(0, 0%, 94%);
+  --color-dark: hsl(0, 0%, 20%);
+  --color-shadow: hsla(0, 0%, 13%, 0.2);
+  --color-primary: hsl(347, 83%, 56%);
+  --color-secondary: hsl(275, 100%, 25%); */
+  --font-sans: "Open Sans", sans-serif;
+}
+
+.brand {
+  color: var(--color-secondary);
+}
+
+a {
+  /*color: var(--color-dark); */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+footer a {
+  color: var(--color-primary);
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-light);
+  font-size: 1.333rem;
+}
+
+.navbar__collapse-show {
+  display: block !important;
+  width: 100%;
+}
+
+.navbar__toggle {
+  border: none;
+  background-color: transparent;
+  display: grid;
+  place-content: center;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+  .navbar__collapse {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .navbar__toggle {
+    display: none;
+  }
+}
+/* https://jensnti.github.io/wu-exempel/navigation/ */
+.nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav-item {
+  padding-right: 1rem;
+}
+
+.nav-item:first-child {
+  padding-left: 1rem;
+}
+
+.nav-link {
+  color: var(--color-secondary);
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding-left: 0;
+    flex-direction: column;
+  }
+  .nav-item:first-child {
+    padding-left: 0rem;
+  }
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  /*-webkit-font-feature-settings: 'liga';*/
+  -webkit-font-smoothing: antialiased;
+}
+
+/* container */
+body {
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.container:nth-child(2) {
+  background-color: var(--color-shadow);
+}
+
+.container > section {
+  padding: 3rem 0;
+}
+
+@media (min-width: 36rem) {
+  .container {
+    max-width: 36rem;
+  }
+}
+@media (min-width: 48rem) {
+  .container {
+    max-width: 48rem;
+  }
+}
+@media (min-width: 62rem) {
+  .container {
+    max-width: 62rem;
+  }
+}
+/* container för att placera CTA knappen */
+.cta {
+  margin-top: 3.157rem;
+  display: grid;
+  place-content: center;
+}
+
+/* button för CTA */
+.btn {
+  text-align: center;
+  text-decoration: none;
+  margin: 0 0.25rem;
+  padding: 0.375rem 0.75rem;
+  color: var(--color-light);
+  background-color: var(--color-secondary);
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+  font-size: 2.369rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  color: var(--color-light);
+  background-color: var(--color-primary);
+}
+
+/* hero */
+.hero {
+  font-size: 1.777rem;
+  background-color: var(--color-dark);
+  background-image: url(../public/images/WEBB.png);
+  color: var(--color-light);
+  min-height: 80vh;
+  display: grid;
+  place-content: center;
+  margin-bottom: 3.157rem;
+}
+
+@media (max-width: 36rem) {
+  .hero {
+    font-size: 1.333rem;
+    word-break: break-all;
+  }
+  .hero h1 {
+    font-size: 2.369rem;
+  }
+}
+/* font stilar och storlekar */
+h1, h2, h3 {
+  margin-bottom: 0.777rem;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 3.157rem;
+}
+
+h2 {
+  font-size: 2.369rem;
+}
+
+h3 {
+  font-size: 1.777rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* sidfot */
+footer {
+  margin-top: 3.157rem;
+  padding-top: 2.369rem;
+  padding-bottom: 3.157rem;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+/*# sourceMappingURL=style.css.map */

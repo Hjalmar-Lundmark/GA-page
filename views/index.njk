@@ -1,0 +1,39 @@
+{% extends "layout.njk" %}
+{% block content %}
+
+<nav class="navbar">
+    <a class="brand" href="#">Webbtillgänglighet</a>
+    <button class="navbar__toggle">
+        <span class="material-icons"> menu </span>
+    </button>
+    <div class="navbar__collapse">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#intro">Abstract(eng)</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<header class="hero">
+    <div class="container">
+        <h1>Gymnasiearbete - Hjalmar Lundmark</h1>
+        <p>
+            Gymnasiearbete runt webbtillgänglighet. Ett tillgänglighetstest har utförts. ...
+        </p>
+        <!-- https://jensnti.github.io/wu-exempel/knappar/ -->
+        <div class="cta">
+            <a href="./pdf/GymnasieArb_Hjalmar_L.pdf" class="btn"  download="GymnasieArb_HjalmarL">Ladda ner pdf</a>
+        </div>
+    </div>
+    <!-- kolla css vad denna gör, ligger över hela hero för att texten ska gå att läsa, kontrast -->
+    <div class="overlay"></div>
+</header>
+<!-- https://jensnti.github.io/wu-exempel/media-queries/ -->
+<main class="container">
+    <section class="intro" id="intro">
+        <h2>Abstract(eng)</h2>
+        <p>Copy paste abstract here</p>
+    </section>
+</main>
+
+{% endblock %}

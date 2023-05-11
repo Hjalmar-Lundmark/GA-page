@@ -9,9 +9,13 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
 
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app,
+});
+
 app.get('/', async function (req, res, next) {
     res.render('index.njk', {
-        message: 'Hello world!',
-        title: 'Nunjucks hello world',
+        title: 'Hjalmars GA',
     });
 });
